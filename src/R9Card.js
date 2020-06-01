@@ -20,7 +20,10 @@ const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 345,
         minWidth: 345,
-        marginTop: 32
+        marginTop: 32,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-start'
     },
     media: {
         height: 0,
@@ -74,9 +77,10 @@ export default function R9Card(props) {
                 className={classes.media}
                 image={props.image}
             />
-            <CardContent>
+            <CardContent style={{ height: 60 }}>
                 <Typography variant="body2" style={{ color: '#808080' }} component="p">
-                    {props.description}
+                    {props.description.substring(0, 128)}
+                    {props.description.length > 127 ? '. . .' : ''}
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>
