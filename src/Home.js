@@ -201,12 +201,12 @@ export default function Tasks() {
                                 </MenuItem>
                             ))}
                         </Select>
-                    </FormControl> */}
+                    </FormControl> 
                     <FormControlLabel
                         control={<Checkbox checked={showClosestToMeFirst} onChange={() => setShowClosestToMeFirst(!showClosestToMeFirst)} />}
                         label="Show closest to me first (requires location services)"
                         style={{ marginTop: 16 }}
-                    />
+                    />*/}
                 </div>
                 <div className='r9s' style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', }}>
                     {r9s && r9s.map(r9 => {
