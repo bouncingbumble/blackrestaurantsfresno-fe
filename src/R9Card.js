@@ -71,7 +71,7 @@ export default function R9Card(props) {
                     </IconButton>
                 }
                 title={props.name}
-                subheader={props.typeOfFood}
+                subheader={props.typeOfFood.toLowerCase()}
             />
             <CardMedia
                 className={classes.media}
