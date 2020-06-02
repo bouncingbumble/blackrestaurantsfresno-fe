@@ -179,7 +179,7 @@ export default function Tasks() {
         <Grid container spacing={3}>
             <Grid item xs={12}>
                 <div className={classes.top} style={{ justifyContent: 'space-between' }}>
-                    <FormControl className={classes.formControl} style={{
+                    {/* <FormControl className={classes.formControl} style={{
                         maxWidth: 345,
                         minWidth: 345,
                     }}>
@@ -201,7 +201,7 @@ export default function Tasks() {
                                 </MenuItem>
                             ))}
                         </Select>
-                    </FormControl>
+                    </FormControl> */}
                     <FormControlLabel
                         control={<Checkbox checked={showClosestToMeFirst} onChange={() => setShowClosestToMeFirst(!showClosestToMeFirst)} />}
                         label="Show closest to me first (requires location services)"
