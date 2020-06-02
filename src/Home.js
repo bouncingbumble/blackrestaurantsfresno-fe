@@ -99,23 +99,23 @@ export default function Tasks() {
         console.log(r9sWithCoordinates)
 
 
-        let r9sWithDistanceToUser = await Promise.all(r9sWithCoordinates.map(async r => {
-            try {
-                const coords = await fetchCoordinates()
-                console.log(coords)
-                r.distanceToUser = distanceInKmBetweenEarthCoordinates(coords.lat, coords.long, r.coords.lat, r.coords.lng)
-                return r
-            } catch (err) {
-                console.log(err)
-                return r
-            }
-        }))
+        // let r9sWithDistanceToUser = await Promise.all(r9sWithCoordinates.map(async r => {
+        //     try {
+        //         const coords = await fetchCoordinates()
+        //         console.log(coords)
+        //         r.distanceToUser = distanceInKmBetweenEarthCoordinates(coords.lat, coords.long, r.coords.lat, r.coords.lng)
+        //         return r
+        //     } catch (err) {
+        //         console.log(err)
+        //         return r
+        //     }
+        // }))
 
-        console.log(r9sWithDistanceToUser)
-        r9sWithDistanceToUser.sort((a, b) => (a.distanceToUser > b.distanceToUser) ? 1 : -1)
+        // console.log(r9sWithDistanceToUser)
+        // r9sWithDistanceToUser.sort((a, b) => (a.distanceToUser > b.distanceToUser) ? 1 : -1)
 
-        shuffle(r9sWithDistanceToUser)
-        setR9s(r9sWithDistanceToUser)
+        shuffle(r9sWithCoordinates)
+        setR9s(r9sWithCoordinates)
 
         let foodTypes = []
         r9s.forEach(r => {
