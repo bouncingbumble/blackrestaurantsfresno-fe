@@ -17,6 +17,14 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { apiCall, externalApiCall } from './api';
 import { getCurrentPosition } from "./utils";
 
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
 export default function Tasks() {
     const classes = useStyles();
 
@@ -106,6 +114,7 @@ export default function Tasks() {
         console.log(r9sWithDistanceToUser)
         r9sWithDistanceToUser.sort((a, b) => (a.distanceToUser > b.distanceToUser) ? 1 : -1)
 
+        shuffle(r9sWithDistanceToUser)
         setR9s(r9sWithDistanceToUser)
 
         let foodTypes = []
