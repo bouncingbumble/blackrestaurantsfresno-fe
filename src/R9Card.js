@@ -104,7 +104,13 @@ export default function R9Card(props) {
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <CardContent>
                     <Map coords={props.coords} />
-                    <Typography variant="body2" style={{ color: "#808080" }}>{props.address}</Typography>
+                    <a href={`https://maps.google.com/?q=${props.address}`} target="_blank">
+                        <a href={`https://maps.apple.com/maps?q=${props.address}`} target="_blank">
+
+                            {/* <a style={{ textDecoration: 'none' }} href={`geo:${props.coords && props.coords.lat},${props.coords && props.coords.lng}`}> */}
+                            <Typography variant="body2" style={{ color: "#808080", }}>
+                                {props.address}
+                            </Typography></a></a>
                 </CardContent>
             </Collapse>
         </Card>
