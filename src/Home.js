@@ -209,11 +209,11 @@ export default function Tasks() {
                     />*/}
                 </div>
                 <div className='r9s' style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', }}>
-                    {r9s && r9s.map(r9 => {
+                    {r9s.length > 0 ? r9s.map(r9 => {
                         if (foodTypes.includes(r9.typeOfFood.toLowerCase())) {
                             return <R9Card {...r9}></R9Card>
                         }
-                    })}
+                    }) : 'Loading . . .'}
                 </div>
                 <div className="footer" style={{ display: 'flex', justifyContent: 'center', marginTop: 32, flexWrap: 'wrap' }}>
                     <form  >
