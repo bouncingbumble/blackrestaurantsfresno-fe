@@ -73,10 +73,12 @@ export default function R9Card(props) {
                 title={props.name}
                 subheader={props.typeOfFood.toLowerCase()}
             />
-            <CardMedia
-                className={classes.media}
-                image={props.image}
-            />
+            <a href={`${props.website}`} target="_blank">
+                <CardMedia
+                    className={classes.media}
+                    image={props.image}
+                />
+            </a>
             <CardContent style={{ height: 60 }}>
                 <Typography variant="body2" style={{ color: '#808080' }} component="p">
                     {props.description.substring(0, 128)}
